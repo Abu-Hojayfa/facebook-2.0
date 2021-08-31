@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+
+.headerMain {
+  background-color: #242526;
+}
+
+.header {
+  width: 95%;
+}
+
+.logoArea .logoImg {
+  width: 65px;
+  cursor: pointer;
+}
+
+.logoArea p {
+  color: #fff;
+  font-size: 30px;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-family: Pattaya;
+  cursor: pointer;
+}
+
+.postIndicateArea {
+  width: 42%;
+  margin-left: 10% !important;
+}
+
+.header .p {
+  color: #fff;
+  font-size: 28px;
+  margin: 0 30px;
+  cursor: pointer;
+  padding: 5px 20px;
+  border-radius: 10px;
+  border-bottom: 2px solid transparent;
+}
+
+.header .p:hover {
+  background-color: #3A3B3C;
+  color: #2D88FF;
+  border-bottom: 2px solid #2D88FF;
+}
+
+.extraClassTool {
+  font-size: 15px !important;
+  border-radius: 10px !important;
+  background-color: #3A3B3C !important;
+}
+.ProfileIconIndicator{  
+  font-size: 22px !important;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+.infoIndicateArea .p{
+  margin: 0 5px;
+}

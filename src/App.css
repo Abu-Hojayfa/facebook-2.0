@@ -1,0 +1,11 @@
+.App{
+  background-color: #18191A;
+  color: #fff;
+}
+
+.profileMiniIcon{
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50%;
+}
+

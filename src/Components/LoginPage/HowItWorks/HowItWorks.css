@@ -1,0 +1,26 @@
+.demo-work {
+  margin-top: 15%;
+}
+
+.sliderWork {
+  position: relative;
+}
+
+
+.sliderWork .swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.sliderWork .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 500px;
+  height: 500px;
+}
+
+.sliderWork .swiper-slide img {
+  display: block;
+  width: 100%;
+}

@@ -1,0 +1,154 @@
+.CreatePostMain {
+  width: 82%;
+  background-color: #242526;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.post {
+  border-bottom: 1px solid rgb(66, 66, 66);
+  padding-bottom: 10px;
+}
+
+.post img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.post .p {
+  font-size: 20px;
+  color: #AEBBBF;
+  background-color: #414242;
+  margin-top: 10px;
+  padding: 5px 40px;
+  cursor: pointer;
+  width: 85%;
+  border-radius: 20px;
+}
+
+.popUpModal {
+  width: 500px;
+}
+
+.postAreaCreate {
+  height: 520px;
+  background-color: #242526;
+  color: #fff;
+  border-radius: 10px;
+  position: relative;
+}
+
+.popup-content {
+  border: none;
+  background-color: transparent;
+  width: 35%;
+}
+
+.postAreaCreate h3 {
+  border-bottom: 1px solid grey;
+}
+
+.popUpClose {
+  background-color: #3f4142;
+  border: 0;
+  color: #fff;
+  font-size: 40px;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  top: 0;
+  right: 0;
+  margin: 10px 10px 0 0;
+  border-radius: 50%;
+}
+
+.popUpClose p {
+  transform: translateY(-12px);
+}
+
+.postArea {
+  padding: 10px 25px;
+}
+
+.mainPost textarea {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  width: 100%;
+  height: 230px;
+  color: #fff;
+  font-size: 24px;
+}
+
+.mainPost button {
+  width: 605px;
+  font-size: 20px;
+  font-weight: 700;
+  transform: translateY(-10px);
+}
+
+.addImg {
+  background-color: #204128;
+  color: #77df8f;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 6px 0 !important;
+}
+
+.addImg:hover {
+  color: #fff;
+}
+
+.readyPost {
+  background-color: #4294FF;
+  color: #fff;
+  cursor: pointer !important;
+}
+
+.postBtnMute {
+  background-color: #505151;
+  color: #7C7C7D;
+  cursor: not-allowed !important;
+}
+
+.postBtnMute:hover {
+  color: #7C7C7D;
+}
+
+.fileUpload {
+  font-size: 22px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.fileUpload:hover,
+.fileUpload:active,
+.fileUpload:focus {
+  cursor: pointer;
+}
+
+.fileUpload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: pointer;
+}
+
+input[type="file"] {
+  position: fixed;
+  right: 100%;
+  bottom: 100%;
+}
+

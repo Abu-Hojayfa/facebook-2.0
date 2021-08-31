@@ -1,0 +1,20 @@
+.leftSideNav{
+  position: fixed;
+  
+}
+.leftNavIcon p{
+  font-size: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.leftNavIcon, .leftSideNavProfile{
+  margin: 15px 0 !important;
+  padding: 10px 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.leftNavIcon:hover,
+.userProfilE:hover,
+.leftSideNavProfile:hover{
+  background-color:#303031;
+}
