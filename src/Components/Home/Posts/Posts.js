@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 import Reacts from "./Reacts";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCommentAlt, faShare } from "@fortawesome/free-solid-svg-icons";
 
 const Posts = () => {
   const [allPosts, setAllPosts] = useState();
@@ -31,7 +32,6 @@ const Posts = () => {
                   {moment(`${post.time}`, "MMMM Do YYYY, h:mm:ss a").fromNow()}
                 </p>
               </div>
-              
             </div>
 
             <div className="thePost">
@@ -52,10 +52,18 @@ const Posts = () => {
 
             <div className="reaction-cmnt-share d-flex">
               <Reacts id={post._id} reacts={post.reacts} />
+              <div className="d-flex shareBtn">
+                <FontAwesomeIcon icon={faCommentAlt} />
+                <p>Comments</p>
+              </div>
+              <div className="d-flex shareBtn">
+                <FontAwesomeIcon icon={faShare} />
+                <p>Share</p>
+              </div>
             </div>
           </div>
         ))}
-        <h3>No more posts</h3>
+      <h3 className="text-center">No more posts</h3>
     </div>
   );
 };

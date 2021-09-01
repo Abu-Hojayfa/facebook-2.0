@@ -103,10 +103,33 @@
   margin-left: 40px;
   padding: 5px 50px;
   border-radius: 10px;
-  cursor: pointer;transform: translate3d(-2em, -1.5em, 0);
+  cursor: pointer;
+  transform: translate3d(-2em, -1.5em, 0);
 }
 
-.animation-story p:hover{
+.shareBtn{
+  padding: 5px 50px;
+  margin-left: 40px;
+  margin-top: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 50px;
+}
+
+.shareBtn .fa-share ,
+.shareBtn .fa-comment-alt {
+  font-size: 25px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.shareBtn p {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.animation-story p:hover,
+.shareBtn:hover {
   background-color: rgb(66, 66, 66);
 }
 
@@ -116,3 +139,4 @@
   margin: 0;
   padding: 0 0 0 80px;
 }
+
