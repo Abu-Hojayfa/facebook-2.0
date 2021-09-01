@@ -114,6 +114,8 @@
   border-radius: 10px;
   cursor: pointer;
   height: 50px;
+  text-decoration: none;
+  color: white;
 }
 
 .shareBtn .fa-share ,
@@ -131,6 +133,7 @@
 .animation-story p:hover,
 .shareBtn:hover {
   background-color: rgb(66, 66, 66);
+  color: white;
 }
 
 .reactn-cmnt-info>p{

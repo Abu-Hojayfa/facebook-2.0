@@ -3,6 +3,7 @@ import moment from "moment";
 import Reacts from "./Reacts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentAlt, faShare } from "@fortawesome/free-solid-svg-icons";
+import Comments from "../Comments/Comments";
 
 const Posts = () => {
   const [allPosts, setAllPosts] = useState();
@@ -36,7 +37,7 @@ const Posts = () => {
 
             <div className="thePost">
               <p>{post.description}</p>
-              <img className="img-fluid" src={post.postImg} alt="" />
+              {post.postImg && <img className="img-fluid" src={post.postImg} alt="" />}
               <div className="reactn-cmnt-info">
                 <p>
                   {post.reacts.like +
@@ -61,6 +62,7 @@ const Posts = () => {
                 <p>Share</p>
               </div>
             </div>
+            <Comments postId={post._id} allComments={post.comments} />
           </div>
         ))}
       <h3 className="text-center">No more posts</h3>

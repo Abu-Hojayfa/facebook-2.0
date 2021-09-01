@@ -31,7 +31,7 @@ const RightSideNav = () => {
               key={user.uid}
               onClick={(e) => handleClick(user)}
             >
-              <img className="img-fluid" src={user.photoURL} alt="" />
+              <img className="img-fluid userProfilEimg" src={user.photoURL} alt="" />
               <div className="profileInfo">
                 <h5>{user.displayName}</h5>
               </div>

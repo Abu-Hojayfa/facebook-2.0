@@ -55,13 +55,11 @@ const CreatePost = () => {
     })
       .then((res) => res.json())
       .then((data) => {});
-
     window.location.reload();
-    console.log(formData);
   };
 
   const alertForDes = () => {
-    alert("Des to kiso de bal");
+    alert("Please Write Something. 😐");
   };
 
   return (
