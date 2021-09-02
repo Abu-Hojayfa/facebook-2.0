@@ -62,7 +62,7 @@ const Posts = () => {
                 <p>Share</p>
               </div>
             </div>
-            <Comments postId={post._id} allComments={post.comments} />
+            <Comments postId={post._id} postComments={post.comments} />
           </div>
         ))}
       <h3 className="text-center">No more posts</h3>

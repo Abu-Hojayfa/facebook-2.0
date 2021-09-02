@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Comments.css";
 import send from "../../../images/send.png";
 
-const Comments = ({ postId, allComments }) => {
+const Comments = ({ postId, postComments }) => {
   const [comment, setComment] = useState();
+  const [allComments, setAllComments] = useState(postComments);
+  const [hiding, setHiding] = useState(true);
+  const [hideCmnts, setHideCmnts] = useState([]);
   const img = localStorage.getItem("profileImg");
   const email = localStorage.getItem("email");
   const name = localStorage.getItem("name");
+
+  useEffect(() => {
+    if (hiding === true) {
+      setHideCmnts(allComments.slice(0, 2));
+    }
+    if (hiding === false) {
+      setHideCmnts(allComments);
+    }
+  }, [hiding, allComments]);
 
   const handleBlur = (e) => {
     setComment(e.target.value);
@@ -29,7 +41,7 @@ const Comments = ({ postId, allComments }) => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => {});
+      .then((data) => setAllComments(data.reverse()));
     document.getElementById(`clearInputId${postId}`).value = "";
     setComment();
   };
@@ -38,9 +50,15 @@ const Comments = ({ postId, allComments }) => {
     alert("Please Write Something in Comment Section😐");
   };
 
+  const handleHiding = () => {
+    if (allComments.length > 2) {
+      setHiding(!hiding);
+    }
+  };
+
   return (
     <div className="containerComnt">
-      <div className="cmntInput d-flex">
+      <div className="cmntInput d-flex mb-3">
         <img className="img-fluid userProfilEimg" src={img} alt="" />
         <input
           id={`clearInputId${postId}`}
@@ -56,6 +74,32 @@ const Comments = ({ postId, allComments }) => {
           alt=""
         />
       </div>
+      {allComments &&
+        hideCmnts.map((cmnt, index) => (
+          <div key={index} className="d-flex mt-3">
+            <img
+              className="img-fluid userProfilEimg"
+              src={cmnt.profileImg}
+              alt=""
+            />
+            <div className="cmntInfo">
+              <p>{cmnt.name}</p>
+              <p>{cmnt.comment}</p>
+            </div>
+          </div>
+        ))}
+      {allComments.length ? (
+        <p className="hidingCmnts" onClick={(e) => handleHiding()}>
+          {allComments.length > 2 && hiding ? "See More Comments" : "No More Comments"}
+        </p>
+      ) : (
+        ""
+      )}
+      {allComments.length ? (
+        ""
+      ) : (
+        <p className="noCmnts text-secondary">No Comments yet</p>
+      )}
     </div>
   );
 };
