@@ -8,11 +8,10 @@ const RightSideNav = () => {
   useEffect(() => {
     fetch("http://localhost:5000/users")
       .then((res) => res.json())
-      .then((data) => setAllUsers(data));
+      .then((data) => setAllUsers(data.reverse()));
   }, []);
 
   const handleClick = (user) => {
-    console.log(user);
     history.push({
       pathname: "/userProfile",
       state: { data: user },
@@ -23,7 +22,7 @@ const RightSideNav = () => {
     <div className="rightSideNav">
       <h3 className="rightContacts">All Login Accounts</h3>
 
-      <div className="">
+      <div className="scrollingAccount">
         {allUsers.length > 0 &&
           allUsers.map((user) => (
             <div

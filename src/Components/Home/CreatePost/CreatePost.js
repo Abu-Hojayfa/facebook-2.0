@@ -93,12 +93,12 @@ const CreatePost = () => {
                   <div className="profileInfo">
                     <h5>{localStorage.getItem("name")}</h5>
 
-                    <p>{moment().format("MMMM Do YYYY")}</p>
+                    <p>{moment().format(" DD MMMM, YYYY")}</p>
                   </div>
                 </div>
                 <div className="mainPost">
                   <textarea
-                    onBlur={addDescription}
+                    onChange={addDescription}
                     name="description"
                     placeholder={`What's going on your mind, ${
                       localStorage.getItem("name").split(" ")[0]
