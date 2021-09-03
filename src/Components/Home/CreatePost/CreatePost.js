@@ -52,10 +52,11 @@ const CreatePost = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
-    })
-      .then((res) => {if(res.status){
+    }).then((res) => {
+      if (res.status === 200) {
         window.location.reload();
-      }});
+      }
+    });
   };
 
   const alertForDes = () => {
