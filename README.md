@@ -15,6 +15,6 @@
 ## Technology Used
 ### React.js, Firebase, Node js, Express, MongoDb, React Bootstrap
 
-# [Live Site](https://facebook-2o.web.app/)
+## [Live Site](https://facebook-2o.web.app/)
 
 ## [Server Code](https://github.com/Abu-Hojayfa/facebook-2.0_server)
