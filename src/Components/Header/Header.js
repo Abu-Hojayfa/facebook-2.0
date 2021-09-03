@@ -19,7 +19,7 @@ import { useHistory } from "react-router";
 const Header = () => {
   let history = useHistory();
   const goToHome = () => {
-    history.push("/home");
+    history.push("/");
   };
 
   return (
