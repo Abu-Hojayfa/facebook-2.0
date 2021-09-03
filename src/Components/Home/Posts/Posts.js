@@ -1,23 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import moment from "moment";
 import Reacts from "./Reacts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentAlt, faShare } from "@fortawesome/free-solid-svg-icons";
 import Comments from "../Comments/Comments";
+import Loader from "../../../images/loader.gif";
 
-const Posts = () => {
-  const [allPosts, setAllPosts] = useState();
-
-  useEffect(() => {
-    fetch("http://localhost:5000/allposts")
-      .then((res) => res.json())
-      .then((data) => setAllPosts(data.reverse()));
-  }, []);
-
+const Posts = ({ allPost }) => {
   return (
     <div id="posts" className="all-posts mt-3">
-      {allPosts &&
-        allPosts.map((post) => (
+      {allPost.length > 0 ? (
+        allPost.map((post) => (
           <div key={post._id}>
             <div className="postProfile d-flex align-items-center">
               <img className="img-fluid" src={post.profileImg} alt="" />
@@ -37,7 +30,9 @@ const Posts = () => {
 
             <div className="thePost">
               <p>{post.description}</p>
-              {post.postImg && <img className="img-fluid" src={post.postImg} alt="" />}
+              {post.postImg && (
+                <img className="img-fluid" src={post.postImg} alt="" />
+              )}
               <div className="reactn-cmnt-info">
                 <p>
                   {post.reacts.like +
@@ -64,7 +59,10 @@ const Posts = () => {
             </div>
             <Comments postId={post._id} postComments={post.comments} />
           </div>
-        ))}
+        ))
+      ) : (
+        <img className="img-fluid loaderImage" src={Loader} alt="Loading img" />
+      )}
       <h3 className="text-center">No more posts</h3>
     </div>
   );

@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./RightSideNav.css";
+import Loader from '../../images/loader.gif';
 
 const RightSideNav = () => {
   const [allUsers, setAllUsers] = useState([]);
   let history = useHistory();
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://limitless-thicket-51760.herokuapp.com/users")
       .then((res) => res.json())
       .then((data) => setAllUsers(data.reverse()));
   }, []);
 
   const handleClick = (user) => {
     history.push({
-      pathname: "/userProfile",
-      state: { data: user },
+      pathname: `/userProfile?${user.uid}`,
+      state: { userData: user },
     });
   };
 
@@ -23,7 +24,7 @@ const RightSideNav = () => {
       <h3 className="rightContacts">All Login Accounts</h3>
 
       <div className="scrollingAccount">
-        {allUsers.length > 0 &&
+        {allUsers.length > 0 ?
           allUsers.map((user) => (
             <div
               className="userProfilE d-flex align-items-center"
@@ -35,7 +36,7 @@ const RightSideNav = () => {
                 <h5>{user.displayName}</h5>
               </div>
             </div>
-          ))}
+          )):<img className="img-fluid loaderImage" src={Loader} alt="Loading img" />}
       </div>
     </div>
   );

@@ -33,7 +33,7 @@ const Comments = ({ postId, postComments }) => {
         comment: comment,
       },
     };
-    fetch("http://localhost:5000/writecmnt", {
+    fetch("https://limitless-thicket-51760.herokuapp.com/writecmnt", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -18,8 +18,8 @@ import { useHistory } from "react-router";
 
 const Header = () => {
   let history = useHistory();
-  const redirectToMessenger = () => {
-    history.push("/messenger");
+  const goToHome = () => {
+    history.push("/home");
   };
 
   return (
@@ -30,14 +30,18 @@ const Header = () => {
         type="dark"
         effect="solid"
       />
-      <div className="header m-auto row">
+      <div onClick={()=> {goToHome()}} className="header m-auto row">
         <div className="logoArea d-flex align-items-center col ">
           <img className="img-fluid logoImg" src={logo} alt="" />
           <p>Facebook 2.O</p>
         </div>
 
         <div className="postIndicateArea m-auto d-flex align-items-center col-7">
-          <div className="p" data-tip="Home">
+          <div
+            onClick={() => goToHome()}
+            className="p"
+            data-tip="Home"
+          >
             <FontAwesomeIcon icon={faHome} />
           </div>
 
@@ -73,11 +77,7 @@ const Header = () => {
             <FontAwesomeIcon icon={faPlus} />
           </div>
 
-          <div
-            onClick={() => redirectToMessenger()}
-            className="p"
-            data-tip="Messenger 2.O"
-          >
+          <div className="p" data-tip="Messenger 2.O">
             <FontAwesomeIcon icon={faFacebookMessenger} />
           </div>
 

@@ -24,7 +24,7 @@ const Reacts = (props) => {
 
     newReact[reaction] = newReactValue;
 
-    fetch("http://localhost:5000/addreact", {
+    fetch("https://limitless-thicket-51760.herokuapp.com/addreact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

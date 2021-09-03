@@ -15,7 +15,7 @@ const CreatePost = () => {
     name: localStorage.getItem("name"),
     email: localStorage.getItem("email"),
     description: "",
-    time: '',
+    time: "",
     comments: [],
     reacts: { like: 0, haha: 0, wow: 0, love: 0, sad: 0, angry: 0 },
   });
@@ -46,16 +46,16 @@ const CreatePost = () => {
   };
 
   const doAPost = () => {
-    fetch("http://localhost:5000/doapost", {
+    fetch("https://limitless-thicket-51760.herokuapp.com/doapost", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
-      .then((res) => res.json())
-      .then((data) => {});
-    window.location.reload();
+      .then((res) => {if(res.status){
+        window.location.reload();
+      }});
   };
 
   const alertForDes = () => {
@@ -71,7 +71,12 @@ const CreatePost = () => {
           alt="Profile"
         />
         <Popup
-          trigger={<p className="p">What is on your mind, {localStorage.getItem("name").split(" ")[0]}?</p>}
+          trigger={
+            <p className="p">
+              What is on your mind, {localStorage.getItem("name").split(" ")[0]}
+              ?
+            </p>
+          }
           modal
           nested
         >

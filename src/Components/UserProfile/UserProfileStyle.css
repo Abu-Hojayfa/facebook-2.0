@@ -1,0 +1,45 @@
+.containerOfUserProfile {
+  color: white;
+  padding-bottom: 50px;
+}
+
+.useProfile {
+  width: 50%;
+  margin: auto;
+  margin-top: 2%;
+  padding-top: 1%;
+}
+
+.userProfileImg {
+  width: 18%;
+  margin: auto;
+}
+
+.userProfileImg img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.profileName {
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+.ismailVeri,
+.noEmailVeri {
+  color: #3C90FF;
+  margin-left: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.noEmailVeri{
+  color: rgb(230, 4, 4);
+}
+
+.postCreatedHeader{
+  margin-left: 10%;
+  padding-top: 20px;
+  font-size: 22px;
+}

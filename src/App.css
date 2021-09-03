@@ -1,6 +1,7 @@
 .App{
   background-color: #18191A;
   color: #fff;
+  min-height: 100vh;
 }
 
 .profileMiniIcon{

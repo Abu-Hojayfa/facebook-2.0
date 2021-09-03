@@ -6,12 +6,12 @@ import RightSideNav from "./Components/RightSideNav/RightSideNav";
 import Main from "./Components/Home/Main/Main";
 import Login from "./Components/LoginPage/Login";
 import PrivateRoute from "./Components/LoginPage/PrivateRoute/PrivateRoute";
+import UserProfile from "./Components/UserProfile/UserProfile";
 
 function App() {
   return (
     <Router>
       <Switch>
-
         <PrivateRoute exact path="/">
           <div className="App">
             <Header />
@@ -50,8 +50,11 @@ function App() {
           </div>
         </PrivateRoute>
 
-        <PrivateRoute  path="/userProfile">
-          
+        <PrivateRoute path="/userProfile:profileId">
+          <div className="App">
+            <Header />
+            <UserProfile />
+          </div>
         </PrivateRoute>
       </Switch>
     </Router>
