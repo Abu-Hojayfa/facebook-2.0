@@ -33,23 +33,6 @@ function App() {
           <Login />
         </Route>
 
-        <PrivateRoute path="/home">
-          <div className="App">
-            <Header />
-            <div className="row pt-3 w-100">
-              <div className="col-3">
-                <LeftSideNav />
-              </div>
-              <div className="col-7">
-                <Main />
-              </div>
-              <div className="col-2">
-                <RightSideNav />
-              </div>
-            </div>
-          </div>
-        </PrivateRoute>
-
         <PrivateRoute path="/userProfile:profileId">
           <div className="App">
             <Header />
